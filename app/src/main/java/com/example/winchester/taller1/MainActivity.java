@@ -2,15 +2,11 @@ package com.example.winchester.taller1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;;
 
     public class MainActivity extends AppCompatActivity {
@@ -33,47 +29,40 @@ private Result gameResult;
         setContentView(R.layout.activity_main);
 
         Button piedra;
-        piedra = (Button) findViewById(R.id.piedra);
+        piedra = (Button) findViewById(R.id.ImgPiedra);
         Button papel;
-        papel = (Button) findViewById(R.id.papel);
+        papel = (Button) findViewById(R.id.ImgPapel);
         Button tijera;
-        tijera = (Button) findViewById(R.id.tijera);
+        tijera = (Button) findViewById(R.id.ImgTijera);
 
         // Set click listening event for all buttons.
         piedra.setOnClickListener((OnClickListener) this);
-        papel.setOnClickListener(this);
-        tijera.setOnClickListener(this);
+        papel.setOnClickListener((OnClickListener)this);
+        tijera.setOnClickListener((OnClickListener)this);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.Juego, menu);
-        return true;
-    }
-
-    @Override
     public void onClick(View v) {
 
-        ImageView imageView = (ImageView) findViewById(R.id.imageViewAnswerUser);
+        ImageView imageView = (ImageView) findViewById(R.id.ImgPiedra);
         boolean play = true;
 
         switch (v.getId()) {
-            case R.id.piedra:
+            case R.id.ImgPiedra:
                 userSelection = Option.piedra;
-                imageView.setImageResource(R.drawable.piedra);
+              // imageView.setImageResource(R.drawable.piedra);
                 break;
-            case R.id.papel:
+            case R.id.ImgPapel:
                 userSelection = Option.papel;
-                imageView.setImageResource(R.drawable.papel);
+              //  imageView.setImageResource(R.drawable.papel);
                 break;
             case R.id.tijera:
                 userSelection = Option.tijeras;
-                imageView.setImageResource(R.drawable.tijera);
+             //   imageView.setImageResource(R.drawable.tijera);
                 break;
-            case R.id.imageButtonHome:
-                startActivity(new Intent(activity_main.this, ChooseActivity.class)); // To go home.
-                play = false;
-                break;
+          //  case R.id.imageButtonHome:
+           //     startActivity(new Intent(activity_main.this, ChooseActivity.class)); // To go home.
+            //    play = false;
+              //  break;
         }
 
         if(play) {
@@ -83,7 +72,7 @@ private Result gameResult;
     }
 
     private void showResults() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity_main.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setCancelable(false);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
@@ -109,21 +98,21 @@ private Result gameResult;
         // Generates a random play.
         int rand =  ((int)(Math.random() * 10)) % 3;
         Option androidSelection = null;
-        ImageView imageView = (ImageView) findViewById(R.id.ImageViewAnswerAndroid);
+     //   ImageView imageView = (ImageView) findViewById(R.id.ImageViewAnswerAndroid);
 
         // Sets the right image according to random selection.
         switch (rand) {
             case 0:
                 androidSelection = Option.piedra;
-                imageView.setImageResource(R.drawable.piedra);
+                //imageView.setImageResource(R.drawable.ImgPiedra);
                 break;
             case 1:
                 androidSelection = Option.papel;
-                imageView.setImageResource(R.drawable.papel);
+                //imageView.setImageResource(R.drawable.papel);
                 break;
             case 2:
                 androidSelection = Option.tijeras;
-                imageView.setImageResource(R.drawable.tijera);
+               // imageView.setImageResource(R.drawable.tijera);
                 break;
         }
         // Determine game result according to user selection and Android selection.

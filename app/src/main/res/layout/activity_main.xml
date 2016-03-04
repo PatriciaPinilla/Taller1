@@ -12,7 +12,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PIEDRA"
+        android:text="@string/piedra"
         android:id="@+id/piedra"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -21,15 +21,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PAPEL"
+        android:text="@string/papel"
         android:id="@+id/papel"
-        android:layout_alignTop="@+id/piedra"
+        android:layout_alignTop="@+id/ImgPiedra"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TIJERA"
+        android:text="@string/tijera"
         android:id="@+id/tijera"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="ES HORA DE JUGAR PIEDRA, PAPEL Y TIJERA"
+        android:text="@string/textView"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/tijera"
@@ -56,37 +56,39 @@
         android:id="@+id/textView2"
 
         android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/papel"
-        android:layout_alignEnd="@+id/papel" />
+        android:layout_alignRight="@+id/ImgPiedra"
+        android:layout_alignEnd="@+id/ImgPiedra" />
 
     <ImageView
-        android:id="@+id/imageViewAnswerUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/question"
-        android:layout_toLeftOf="@+id/papel"
-        android:layout_toRightOf="@+id/piedra"
-        android:layout_toEndOf="@+id/piedra"
+        android:layout_toLeftOf="@+id/ImgPiedra"
+        android:layout_toRightOf="@+id/ImgPiedra"
+        android:layout_toEndOf="@id/ImgPiedra"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="70dp"
-        android:layout_marginRight="50dp" />
+        android:layout_marginRight="50dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
+        android:id="@+id/ImgPiedra"
+        android:background="@id/piedra"
+        android:contentDescription="1" />
 
     <ImageView
-        android:id="@+id/ImageViewAnswerAndroid"
+        android:id="@+id/ImgPapel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/tijera"
-        android:src="@drawable/question"
         android:layout_marginRight="50dp"
-        android:layout_below="@+id/imageViewAnswerUser" />
+        android:layout_below="@+id/ImgPiedra"
+        android:layout_toEndOf="@id/ImgPapel" />
 
-    <ImageButton
-        android:id="@+id/imageButtonHome"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/home"
-        android:layout_toRightOf="@+id/imageViewAnswerUser"
-        android:layout_toEndOf="@+id/imageViewAnswerUser"
-        android:layout_marginTop="350dp" />
+        android:id="@+id/ImgTijera"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/ImgPiedra"
+        android:layout_toEndOf="@id/ImgTijera" />
 
 </RelativeLayout>

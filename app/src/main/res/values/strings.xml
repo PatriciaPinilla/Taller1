@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Taller1</string>
+    <string name="piedra">PIEDRA</string>
+    <string name="papel">PAPEL</string>
+    <string name="tijera">TIJERA</string>
+    <string name="textView">ES HORA DE JUGAR PIEDRA, PAPEL Y TIJERA</string>
 </resources>
